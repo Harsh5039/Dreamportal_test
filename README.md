@@ -1,69 +1,15 @@
-Dream Portal Selenium Test Automation
-Automated UI functional tests for the Dream Portal web application using Java, JUnit 5, Selenium WebDriver, and Maven.
+# 🌙 Dream Portal Selenium Test Automation
 
-Project Structure
-src/
-├── main/
-│ └── java/
-│ └── com.example.dreamportaltests.pages/
-│ ├── HomePage.java # Home page actions and elements
-│ ├── DiaryPage.java # Diary table validations
-│ └── SummaryPage.java # Summary table interactions
-└── test/
-└── java/
-└── com.example.dreamportaltests.tests/
-└── DreamPortalTest.java # End-to-end test suite
-pom.xml # Project dependencies and build config
+This project automates the UI functional testing of the Dream Portal web application using Java, JUnit 5, Selenium WebDriver, and Maven. It follows the Page Object Model design pattern to enhance maintainability and readability.
 
-yaml
-Copy
-Edit
+The project structure includes `HomePage.java`, `DiaryPage.java`, and `SummaryPage.java` under `com.example.dreamportaltests.pages`, and a test class `DreamPortalTest.java` under `com.example.dreamportaltests.tests`. The `pom.xml` manages dependencies such as `selenium-java`, `junit-jupiter`, and `webdrivermanager`.
 
+To get started, ensure you have Java 11 or higher, Maven, the latest version of Google Chrome, and an internet connection (required by WebDriverManager). First, clone the repository using `git clone https://github.com/your-username/dream-portal-selenium-tests.git` and navigate into the folder. You can run the tests via Maven using `mvn test`, or directly from your IDE like IntelliJ IDEA or Eclipse by right-clicking `DreamPortalTest.java` and selecting Run.
 
+Test coverage includes the Home Page (`index.html`), where a loading animation disappears after ~3 seconds and the main content with the "My Dreams" button becomes visible. Clicking the button opens the Diary and Summary pages in new tabs. On the Diary Page (`dreams-diary.html`), the test ensures exactly 10 dream entries, each categorized as either "Good" or "Bad", with all columns filled and recurring dream names detected. On the Summary Page (`dreams-total.html`), it validates the counts of "Good" and "Bad" dreams and ensures summary statistics match the Diary data.
 
-Prerequisites
-Java 11 or higher
-Maven
-Chrome browser (latest recommended)
-Internet connection (for WebDriverManager)
+Page Object classes handle functionality modularly: `HomePage.java` manages homepage interactions and tab switching, `DiaryPage.java` validates table entries and categories, and `SummaryPage.java` verifies dream statistics.
 
+Common issues include `NoSuchElementException` (usually caused by incorrect selectors or inactive tabs), `TimeoutException` (possibly requiring increased wait times), and `IndexOutOfBoundsException` (when row structures are unexpected). Chrome’s pop-up blocker should be disabled as the app opens new tabs during navigation.
 
-Setup & Running Tests
-Clone the repository
-git clone <your-repo-url>
-cd <your-repo-folder>
-Run the tests with Maven
-mvn test
-Or run from your IDE
-Open the project in IntelliJ IDEA or Eclipse.
-Right-click on DreamPortalTest.java and select Run.
-
-
-Test Coverage
-Home Page (index.html)
-Loading animation disappears after ~3 seconds.
-Main content and "My Dreams" button become visible.
-"My Dreams" button opens both diary and summary pages in new tabs.
-Diary Page (dreams-diary.html)
-Exactly 10 dream entries.
-All dream types are "Good" or "Bad".
-All columns are filled and non-empty.
-Recurring dream names are detected.
-Summary Page (dreams-total.html)
-Validates Good and Bad dream counts.
-
-
-Page Objects
-HomePage.java – For home page interactions.
-DiaryPage.java – For diary table validations.
-SummaryPage.java – For summary table statistics extraction.
-
-
-Dependencies
-Key dependencies in pom.xml:
-selenium-java
-junit-jupiter
-webdrivermanager
-
-
-Happy Testing! 🚀
+This project is meant for educational or demonstration purposes only. Contributions are welcome—feel free to fork, open issues, or create pull requests. Happy testing! 🚀
