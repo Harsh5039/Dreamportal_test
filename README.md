@@ -2,19 +2,23 @@ Dream Portal Selenium Test Automation
 Automated UI functional tests for the Dream Portal web application using Java, JUnit 5, Selenium WebDriver, and Maven.
 
 Project Structure
-text
 src/
-  main/
-    java/
-      com.example.dreamportaltests.pages/
-        HomePage.java
-        DiaryPage.java
-        SummaryPage.java
-  test/
-    java/
-      com.example.dreamportaltests.tests/
-        DreamPortalTest.java
-pom.xml
+├── main/
+│ └── java/
+│ └── com.example.dreamportaltests.pages/
+│ ├── HomePage.java # Home page actions and elements
+│ ├── DiaryPage.java # Diary table validations
+│ └── SummaryPage.java # Summary table interactions
+└── test/
+└── java/
+└── com.example.dreamportaltests.tests/
+└── DreamPortalTest.java # End-to-end test suite
+pom.xml # Project dependencies and build config
+
+yaml
+Copy
+Edit
+
 
 
 Prerequisites
