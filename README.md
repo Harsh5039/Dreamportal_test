@@ -12,4 +12,4 @@ Page Object classes handle functionality modularly: `HomePage.java` manages home
 
 Common issues include `NoSuchElementException` (usually caused by incorrect selectors or inactive tabs), `TimeoutException` (possibly requiring increased wait times), and `IndexOutOfBoundsException` (when row structures are unexpected). Chrome’s pop-up blocker should be disabled as the app opens new tabs during navigation.
 
-This project is meant for educational or demonstration purposes only. Contributions are welcome—feel free to fork, open issues, or create pull requests. Happy testing! 🚀
+Happy testing! 🚀
